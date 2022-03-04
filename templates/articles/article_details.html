@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ article.title }}{% endblock title %}
+
+{% block content %}
+
+<div class="card detail-card">
+  <div class="card-header">
+    <h1>
+      {{ article.title }}
+    </h1>
+  </div>
+  <div class="card-body">
+    <blockquote class="blockquote mb-0">
+      <p>{{ article.body | linebreaks }}</p>
+      <footer class="blockquote-footer">
+        <cite title="Source Title">{{ article.author | upper }} | {{ article.created_on }}</cite>
+      </footer>
+    </blockquote>
+  </div>
+</div>
+
+{% if user.is_authenticated %}
+<div class="detail-btn">
+  <a type="submit" class="btn btn-secondary" value="Edit" href="{% url 'article_update' article.id %}">Edit</a>
+  <a type="submit" class="btn btn-danger" value="Delete" href="{% url 'article_delete' article.id %}">Delete</a>
+</div>
+{% endif %}
+{% endblock content %}
