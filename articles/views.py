@@ -23,7 +23,7 @@ class ArticleUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
   template_name = 'articles/article_update.html'
   model = Article
   fields = ['title', 'body']
-
+  
   def test_func(self):
     obj = self.get_object()
     return obj.author == self.request.user

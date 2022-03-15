@@ -60,4 +60,6 @@ footer a cite{
 
 .articles-list {
   display: flex;
+  gap: 2;
+  width: 80%;
 }
