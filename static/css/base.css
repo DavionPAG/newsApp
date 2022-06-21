@@ -1,6 +1,11 @@
+html {
+  min-height: 100vh;
+}
+
 body {
-  font-family: "Akaya Telivigala", cursive;
+  min-height: 100vh;
   min-width: 100vw;
+  font-family: "Akaya Telivigala", cursive;
   padding: 10px;
 }
 
@@ -58,8 +63,3 @@ footer a cite{
   width: 10%;
 }
 
-.articles-list {
-  display: flex;
-  gap: 2;
-  width: 80%;
-}
